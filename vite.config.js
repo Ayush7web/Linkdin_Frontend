@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+  base: mode === "production" ? "/Linkdin_Frontend/" : "/", // 👈 dynamic base
   plugins: [react(), tailwindcss()],
   server: {
     watch: {
@@ -11,6 +12,6 @@ export default defineConfig({
       interval: 100,
     },
   },
-});
+}));
 
 
