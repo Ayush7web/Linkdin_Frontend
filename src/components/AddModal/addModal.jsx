@@ -1,5 +1,6 @@
-import React from "react";
+
 import ImageIcon from "@mui/icons-material/Image";
+
 
 const AddModal = () => {
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { Link } from "react-router-dom";
 import GoogleLoginComp from "../../components/GoogleLogin/googleLoginComp";
 
@@ -9,7 +9,7 @@ export const LandingPage = () => {
         <div className="text-4xl mx-auto text-gray-500">
           Welcome To Your Professional Community
         </div>
-        <div className="my-3 flex mx-auto mt-[20px]  gap-2 mx-auto w-[70%] text-black cursor-pointer">
+        <div className="my-3 flex mx-auto mt-[20px]  gap-2 w-[70%] text-black cursor-pointer">
           <GoogleLoginComp />
         </div>
         <Link

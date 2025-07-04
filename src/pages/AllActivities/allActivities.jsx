@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import ProfileCard from '../../components/ProfileCard/profileCard';
 import Advertisement from '../../components/Advertisement/advertisement';
 import { useParams } from 'react-router-dom';

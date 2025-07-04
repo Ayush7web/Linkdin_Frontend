@@ -1,4 +1,4 @@
-import React from "react";
+
 import ClearIcon from "@mui/icons-material/Clear";
 
 const Modal = (props) => {

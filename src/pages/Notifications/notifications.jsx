@@ -1,7 +1,7 @@
-import React from 'react'
+// import React from 'react'
 import ProfileCard from '../../components/ProfileCard/profileCard';
 import Card from '../../components/Card/card';
-import Post from '../../components/Post/post';
+// import Post from '../../components/Post/post';
 import Advertisement from '../../components/Advertisement/advertisement';
 
 const Notifications = () => {

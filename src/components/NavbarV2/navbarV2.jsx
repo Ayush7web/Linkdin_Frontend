@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./navbarV2.css";
 import HomeIcon from "@mui/icons-material/Home";
 import GroupsIcon from "@mui/icons-material/Groups";
@@ -6,10 +6,10 @@ import CasesRoundedIcon from "@mui/icons-material/CasesRounded";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import NotificationImportantIcon from "@mui/icons-material/NotificationImportant";
 import { useLocation, Link } from "react-router-dom";
-import { Balcony } from "@mui/icons-material";
+// import { Balcony } from "@mui/icons-material";
 
 const NavbarV2 = () => {
-  const [dropdown, setDropDown] = useState(false);
+  const [dropdown] = useState(false);
   const location = useLocation();
 
   return (

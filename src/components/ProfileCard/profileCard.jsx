@@ -1,5 +1,5 @@
 import Card from "../Card/card";
-import React from "react";
+// import React from "react";
 
 const ProfileCard = () => {
   return (

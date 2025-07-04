@@ -2,7 +2,7 @@
 import Card from "../Card/card";
 import { useState } from "react";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
+// import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import CommentOutlinedIcon from "@mui/icons-material/CommentOutlined";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 

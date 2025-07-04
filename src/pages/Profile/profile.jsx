@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Advertisement from "../../components/Advertisement/advertisement";
 import Card from "../../components/Card/card";
 import EditIcon from "@mui/icons-material/Edit";
@@ -10,7 +10,7 @@ import ImageModal from "../../components/ImageModal/imageModal";
 import EditinfoModal from "../../components/EditInfoModal/editinfoModal";
 import AboutModal from "../../components/AboutModal/aboutModal";
 import ExpModal from "../../components/ExpModal/expModal";
-import { CottageSharp } from "@mui/icons-material";
+// import { CottageSharp } from "@mui/icons-material";
 import MessageModal from "../../components/MessageModal/messageModal";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
