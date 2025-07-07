@@ -1,4 +1,5 @@
 import Card from "../Card/card";
+import Image from "../../Image/ayush-image.jpg"
 // import React from "react";
 
 const ProfileCard = () => {
@@ -14,7 +15,7 @@ const ProfileCard = () => {
         </div>
         <div className="absolute top-14 left-6 z-10">
           <img
-            src="src/images/ayush-image.jpg"
+            src={Image}
             alt=""
             className="rounded-4xl border-2 h-16 w-16 border-white cursor-pointer"
           />

@@ -1,4 +1,6 @@
 import { Card } from '@mui/material'
+import Image from "../../Image/ayush-image.jpg"
+
 
 const Advertisement = () => {
   return (
@@ -14,7 +16,7 @@ const Advertisement = () => {
           </div>
           <div className="absolute top-14 left-6 z-10">
             <img
-              src="src/images/ayush-image.jpg"
+              src={Image}
               alt=""
               className="rounded-4xl border-2 h-14 w-14 relative left-18 border-white cursor-pointer"
             />

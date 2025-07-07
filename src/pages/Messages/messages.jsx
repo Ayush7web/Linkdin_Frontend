@@ -5,6 +5,8 @@ import Advertisement from "../../components/Advertisement/advertisement";
 import Conversation from "../../components/Conversation/conversation";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
+import Image from "../../Image/ayush-image.jpg"
+import team from "../../Image/team.jpeg"
 
 const Messages = () => {
   return (
@@ -79,7 +81,7 @@ const Messages = () => {
                   <div className="w-full">
                     <div className="flex w-full cursor-pointer border-gray-300 gap-3 p-4">
                       <div>
-                        <img src="src/images/ayush-image.jpg" alt="" />
+                        <img src={Image} alt="" />
                       </div>
                     </div>
                   </div>
@@ -87,7 +89,7 @@ const Messages = () => {
                   <div className="w-full">
                     <div className="flex w-full cursor-pointer border-gray-300 gap-3 p-4">
                       <div>
-                        <img src="src/images/team.jpeg" alt="" />
+                        <img src={team} alt="" />
                       </div>
                     </div>
                   </div>

@@ -8,6 +8,7 @@ import Advertisement from "../../components/Advertisement/advertisement";
 import Post from "../../components/Post/post";
 import Modal from "../../components/Modal/modal";
 import AddModal from "../../components/AddModal/addModal";
+import Image from "../../Image/ayush-image.jpg"
 // import Loader from "../../components/Loader/loader";
 
 const Feeds = () => {
@@ -48,7 +49,7 @@ const Feeds = () => {
           <Card padding={1}>
             <div className="flex gap-2 items-center">
               <img
-                src="src/images/ayush-image.jpg"
+                src={Image}
                 alt=""
                 className="rounded-4xl  h-13 w-13 border-white cursor-pointer"
               />

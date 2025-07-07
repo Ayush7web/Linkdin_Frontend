@@ -14,7 +14,7 @@ import ExpModal from "../../components/ExpModal/expModal";
 import MessageModal from "../../components/MessageModal/messageModal";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-
+import Image from "../../Image/ayush-image.jpg"
 
 const Profile = () => {
 
@@ -95,7 +95,7 @@ const Profile = () => {
                     className="absolute object-cover top-29 left-6 z-10"
                   >
                     <img
-                      src="src/images/ayush-image.jpg"
+                      src={Image}
                       alt=""
                       className="rounded-full border-2 border-white cursor-pointer w-30 h-30"
                     />

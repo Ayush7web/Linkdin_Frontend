@@ -6,6 +6,7 @@ import CasesRoundedIcon from "@mui/icons-material/CasesRounded";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import NotificationImportantIcon from "@mui/icons-material/NotificationImportant";
 import { useLocation, Link } from "react-router-dom";
+import Image from "../../Image/ayush-image.jpg";
 // import { Balcony } from "@mui/icons-material";
 
 const NavbarV2 = () => {
@@ -171,10 +172,7 @@ const NavbarV2 = () => {
           to={"/profile"}
           className="flex flex-col items-center cursor-pointer"
         >
-          <img
-            src="src/images/ayush-image.jpg"
-            className="w-7 h-7 rounded-full"
-          />
+          <img src={Image} className="w-7 h-7 rounded-full" />
           <div className="text-sm text-gray-500">Profile</div>
         </Link>
       </div>

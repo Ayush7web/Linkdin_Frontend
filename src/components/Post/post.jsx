@@ -2,6 +2,7 @@
 import Card from "../Card/card";
 import { useState } from "react";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import Image from "../../Image/ayush-image.jpg"
 // import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import CommentOutlinedIcon from "@mui/icons-material/CommentOutlined";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
@@ -25,7 +26,7 @@ const Post = ({ profile }) => {
       <div className="flex gap-3 p-4">
         <div className="w-12 h-12 rounded-4xl">
           <img
-            src="src/images/ayush-image.jpg"
+            src={Image}
             alt=""
             className="w-12 h-12 rounded-4xl border-2 border-white cursor-pointer"
           />
@@ -132,7 +133,7 @@ const Post = ({ profile }) => {
             <div className="my-4">
               <div className="flex gap-3">
                 <img
-                  src="src/images/ayush-image.jpg"
+                  src={Image}
                   alt=""
                   className="rounded-4xl  h-7 w-7 border-white cursor-pointer"
                 />

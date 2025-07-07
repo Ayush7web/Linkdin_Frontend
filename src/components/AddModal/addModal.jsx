@@ -1,5 +1,6 @@
 
 import ImageIcon from "@mui/icons-material/Image";
+import Image from "../../Image/ayush-image.jpg"
 
 
 const AddModal = () => {
@@ -8,7 +9,7 @@ const AddModal = () => {
       <div className="flex gap-4 items-center">
         <div className="relative">
           <img
-            src={"src/images/ayush-image.jpg"}
+            src={Image}
             alt=""
             className="rounded-full  h-13 w-13  border-white cursor-pointer"
           />
@@ -39,12 +40,14 @@ const AddModal = () => {
         <div className="relative bottom-15 left-5">
           <label htmlFor="inputFile" className="cursor-pointer">
             {" "}
-            <ImageIcon/>{" "}
+            <ImageIcon />{" "}
           </label>
           <input type="file" className="hidden" id="inputFile" />
         </div>
 
-        <div className="bg-blue-950 text-white py-1 px-3 cursor-pointer rounded-2xl relative bottom-16">Post</div>
+        <div className="bg-blue-950 text-white py-1 px-3 cursor-pointer rounded-2xl relative bottom-16">
+          Post
+        </div>
       </div>
     </div>
   );

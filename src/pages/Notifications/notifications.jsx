@@ -3,6 +3,7 @@ import ProfileCard from '../../components/ProfileCard/profileCard';
 import Card from '../../components/Card/card';
 // import Post from '../../components/Post/post';
 import Advertisement from '../../components/Advertisement/advertisement';
+import Image from "../../Image/ayush-image.jpg"
 
 const Notifications = () => {
   return (
@@ -25,7 +26,7 @@ const Notifications = () => {
                 className={`border-b-1 cursor-pointer flex items-center border-gray-300 p-3`}
               >
                 <img
-                  src="src/images/ayush-image.jpg"
+                  src={Image}
                   alt=""
                   className="rounded-4xl cursor-pointer w-15 h-15"
                 />
@@ -39,7 +40,7 @@ const Notifications = () => {
                 className={`border-b-1 cursor-pointer flex items-center border-gray-300 p-3`}
               >
                 <img
-                  src="src/images/ayush-image.jpg"
+                  src={Image}
                   alt=""
                   className="rounded-4xl cursor-pointer w-15 h-15"
                 />
@@ -53,7 +54,7 @@ const Notifications = () => {
                 className={`border-b-1 cursor-pointer flex items-center border-gray-300 p-3`}
               >
                 <img
-                  src="src/images/ayush-image.jpg"
+                  src={Image}
                   alt=""
                   className="rounded-4xl cursor-pointer w-15 h-15"
                 />
@@ -67,7 +68,7 @@ const Notifications = () => {
                 className={`border-b-1 cursor-pointer flex items-center border-gray-300 p-3`}
               >
                 <img
-                  src="src/images/ayush-image.jpg"
+                  src={Image}
                   alt=""
                   className="rounded-4xl cursor-pointer w-15 h-15"
                 />
@@ -82,7 +83,7 @@ const Notifications = () => {
                 className={`border-b-1 cursor-pointer flex items-center border-gray-300 p-3`}
               >
                 <img
-                  src="src/images/ayush-image.jpg"
+                  src={Image}
                   alt=""
                   className="rounded-4xl cursor-pointer w-15 h-15"
                 />
@@ -97,7 +98,7 @@ const Notifications = () => {
                 className={`border-b-1 cursor-pointer flex items-center border-gray-300 p-3`}
               >
                 <img
-                  src="src/images/ayush-image.jpg"
+                  src={Image}
                   alt=""
                   className="rounded-4xl cursor-pointer w-15 h-15"
                 />
@@ -112,7 +113,7 @@ const Notifications = () => {
                 className={`border-b-1 cursor-pointer flex items-center border-gray-300 p-3`}
               >
                 <img
-                  src="src/images/ayush-image.jpg"
+                  src={Image}
                   alt=""
                   className="rounded-4xl cursor-pointer w-15 h-15"
                 />
@@ -127,7 +128,7 @@ const Notifications = () => {
                 className={`border-b-1 cursor-pointer flex items-center border-gray-300 p-3`}
               >
                 <img
-                  src="src/images/ayush-image.jpg"
+                  src={Image}
                   alt=""
                   className="rounded-4xl cursor-pointer w-15 h-15"
                 />
@@ -142,7 +143,7 @@ const Notifications = () => {
                 className={`border-b-1 cursor-pointer flex items-center border-gray-300 p-3`}
               >
                 <img
-                  src="src/images/ayush-image.jpg"
+                  src={Image}
                   alt=""
                   className="rounded-4xl cursor-pointer w-15 h-15"
                 />
