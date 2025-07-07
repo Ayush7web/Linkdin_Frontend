@@ -43,7 +43,7 @@ function App() {
           path="/profile/:id/activities/:postId"
           element={<SingleActivity />}
         />
-      </Routes>
+      </Routes> 
 
       <Footer />
     </div>
