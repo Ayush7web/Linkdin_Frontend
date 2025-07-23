@@ -1,8 +1,11 @@
 // import React from "react";
+
+
+
 import { Link } from "react-router-dom";
 import GoogleLoginComp from "../../components/GoogleLogin/googleLoginComp";
 
-export const LandingPage = () => {
+export const LandingPage = (props) => {
   return (
     <div className="md:flex justify-between px-5 my-4  py-[50px] md:pl-[90px]">
       <div className="md:w-[50%]">
@@ -10,7 +13,7 @@ export const LandingPage = () => {
           Welcome To Your Professional Community
         </div>
         <div className="my-3 flex mx-auto mt-[20px]  gap-2 w-[70%] text-black cursor-pointer">
-          <GoogleLoginComp />
+          <GoogleLoginComp changeLoginValue={props.changeLoginValue} />
         </div>
         <Link
           to={"/login"}

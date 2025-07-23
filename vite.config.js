@@ -4,9 +4,11 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base:  "/", //  dynamic base
+  base: "/", //  dynamic base
   plugins: [react(), tailwindcss()],
-
+  server: {
+    PORT: 5176, // Fix the port to avoid surprises
+  },
 });
 
 
