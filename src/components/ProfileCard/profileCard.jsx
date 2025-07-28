@@ -2,7 +2,8 @@ import Card from "../Card/card";
 import Image from "../../Image/ayush-image.jpg"
 // import React from "react";
 
-const ProfileCard = () => {
+const ProfileCard = (props) => {
+  console.log(props);
   return (
     <Card padding={0}>
       <div className="relative h-25">

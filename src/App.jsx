@@ -68,16 +68,37 @@ function App() {
             )
           }
         />
-        <Route path="/feeds" element={<Feeds />} />
-        <Route path="/employee" element={<Employee />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/notifications" element={<Notifications />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/profile/:id/activities" element={<AllActivities />} />
+        <Route
+          path="/feeds"
+          element={isLogin ? <Feeds /> : <Navigate to={"/login"} />}
+        />
+        <Route
+          path="/employee"
+          element={isLogin ? <Employee /> : <Navigate to={"/login"} />}
+        />
+        <Route
+          path="/resume"
+          element={isLogin ? <Resume /> : <Navigate to={"/login"} />}
+        />
+        <Route
+          path="/messages"
+          element={isLogin ? <Messages /> : <Navigate to={"/login"} />}
+        />
+        <Route
+          path="/notifications"
+          element={isLogin ? <Notifications /> : <Navigate to={"/login"} />}
+        />
+        <Route
+          path="/profile"
+          element={isLogin ? <Profile /> : <Navigate to={"/login"} />}
+        />
+        <Route
+          path="/profile/:id/activities"
+          element={isLogin ? <AllActivities /> : <Navigate to={"/login"} />}
+        />
         <Route
           path="/profile/:id/activities/:postId"
-          element={<SingleActivity />}
+          element={isLogin ? <SingleActivity /> : <Navigate to={"/login"} />}
         />
       </Routes>
 

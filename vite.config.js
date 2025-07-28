@@ -1,20 +1,16 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
-// https://vite.dev/config/
 export default defineConfig({
-  base: "/", //  dynamic base
+  test: { minThreads: 1, maxThreads: 1 },
   plugins: [react(), tailwindcss()],
   server: {
-    PORT: 5176, // Fix the port to avoid surprises
+    port: 5173,
+    watch: {
+      usePolling: true,
+      interval: 100,
+      ignored: ["**/node_modules/**", "**/.git/**"],
+    },
   },
 });
-
-
-
-
-
-
-// mode === "production" ? "/Linkdin_Frontend/" :
-

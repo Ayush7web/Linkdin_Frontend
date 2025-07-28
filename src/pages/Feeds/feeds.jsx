@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../../components/Card/card";
 import ProfileCard from "../../components/ProfileCard/profileCard";
 import MissedVideoCallIcon from "@mui/icons-material/MissedVideoCall";
@@ -8,11 +8,54 @@ import Advertisement from "../../components/Advertisement/advertisement";
 import Post from "../../components/Post/post";
 import Modal from "../../components/Modal/modal";
 import AddModal from "../../components/AddModal/addModal";
-import Image from "../../Image/ayush-image.jpg"
+import Image from "../../Image/ayush-image.jpg";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 // import Loader from "../../components/Loader/loader";
 
 const Feeds = () => {
+  
+  const [personalData, setPersonalData] = useState(null);
+
+  const [post, setPost] = useState([]);
+
   const [addPostModal, setAddPostModal] = useState(false);
+  
+
+  // const fetchSelfData = async () => {
+  //   await axios
+  //     .get("http://localhost:5000/api/auth/self", { withCredentials: true })
+  //     .then((res) => {
+  //       console.log(res);
+  //     })
+  //     .catch((err) => {
+  //       console.error("API error", err);
+  //       toast.error(err?.response?.data?.error);
+  //     });
+  // };
+  // setPersonalData(res.data.user);
+  const fetchData = async () => {
+    try {
+      const [selfData, postData , token] = await Promise.all([
+        await axios.get("http://localhost:5000/api/auth/self", {token}, {
+          withCredentials: true,
+        }),
+        await axios.get("http://localhost:5000/api/post/getAllPost")
+      ]);
+      setPersonalData(selfData.data.user);
+      localStorage.setItem("userInfo", JSON.stringify(selfData.data.user));
+
+      setPost(postData.data.posts);
+    } catch (err) {
+      // console.log(err);
+      toast.error(err?.response?.data?.error);
+    }
+  };
+
+  useEffect(() => {
+    // fetchSelfData();
+    fetchData();
+  }, []);
 
   const handleOpenPostModal = () => {
     setAddPostModal((prev) => !prev);
@@ -23,7 +66,8 @@ const Feeds = () => {
       {/* the left part card for feeds  */}
       <div className="w-[21%] sm-block sm:w-[21%] py-5">
         <div className="h-fit">
-          <ProfileCard />
+          <ProfileCard data = {personalData} />
+          {/* data={personalData} */}
         </div>
         <div className="w-full my-5">
           <Card padding={1}>
@@ -132,6 +176,7 @@ const Feeds = () => {
       )}
 
       {/* <Loader /> */}
+      <ToastContainer />
     </div>
   );
 };
