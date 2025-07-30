@@ -11,16 +11,15 @@ import AddModal from "../../components/AddModal/addModal";
 import Image from "../../Image/ayush-image.jpg";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
 // import Loader from "../../components/Loader/loader";
 
 const Feeds = () => {
-  
   const [personalData, setPersonalData] = useState(null);
 
   const [post, setPost] = useState([]);
 
   const [addPostModal, setAddPostModal] = useState(false);
-  
 
   // const fetchSelfData = async () => {
   //   await axios
@@ -36,11 +35,15 @@ const Feeds = () => {
   // setPersonalData(res.data.user);
   const fetchData = async () => {
     try {
-      const [selfData, postData , token] = await Promise.all([
-        await axios.get("http://localhost:5000/api/auth/self", {token}, {
-          withCredentials: true,
-        }),
-        await axios.get("http://localhost:5000/api/post/getAllPost")
+      const [selfData, postData, token] = await Promise.all([
+        await axios.get(
+          `${baseUrl}/api/auth/self`,
+          { token },
+          {
+            withCredentials: true,
+          }
+        ),
+        await axios.get(`${baseUrl}/api/post/getAllPost`),
       ]);
       setPersonalData(selfData.data.user);
       localStorage.setItem("userInfo", JSON.stringify(selfData.data.user));
@@ -66,7 +69,7 @@ const Feeds = () => {
       {/* the left part card for feeds  */}
       <div className="w-[21%] sm-block sm:w-[21%] py-5">
         <div className="h-fit">
-          <ProfileCard data = {personalData} />
+          <ProfileCard data={personalData} />
           {/* data={personalData} */}
         </div>
         <div className="w-full my-5">

@@ -1,21 +1,25 @@
-
 import { GoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 const GoogleLoginComp = (props) => {
-
   const navigate = useNavigate();
-  const handleOnSuccess = async(credentialResponse) => {
+  const handleOnSuccess = async (credentialResponse) => {
     const token = credentialResponse.credential;
-    const res = await axios.post("http://localhost:5000/api/auth/google" , {token} ,{GoogleLogin}, {withCredentials: true});
+    const res = await axios.post(
+      `${baseUrl}/api/auth/google`,
+      { token },
+      { GoogleLogin },
+      { withCredentials: true }
+    );
 
     // console.log(res);
-    localStorage.setItem('isLogin' , 'true');
-    localStorage.setItem('userInfo' , JSON.stringify(res.data.user));
-    props.changeLoginValue(true)
-    navigate('/feeds');
-  }
+    localStorage.setItem("isLogin", "true");
+    localStorage.setItem("userInfo", JSON.stringify(res.data.user));
+    props.changeLoginValue(true);
+    navigate("/feeds");
+  };
   return (
     <div className="w-full">
       <GoogleLogin
@@ -28,4 +32,4 @@ const GoogleLoginComp = (props) => {
   );
 };
 
-export default GoogleLoginComp
+export default GoogleLoginComp;
