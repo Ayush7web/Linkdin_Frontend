@@ -5,10 +5,7 @@ import { useState } from "react";
 import { Password } from "@mui/icons-material";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-const baseUrl = import.meta.env.VITE_API_BASE_URL;
-
-
-
+// const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 // ==================
 const SignUp = (props) => {
@@ -34,7 +31,7 @@ const SignUp = (props) => {
     }
 
     await axios
-      .post(`${baseUrl}/api/auth/register`, registerField)
+      .post("http://localhost:5000/api/auth/register", registerField)
       .then((res) => {
         // console.log(res)
         toast.success("you have registered successfully");

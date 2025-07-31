@@ -4,7 +4,7 @@ import GoogleLoginComp from "../../components/GoogleLogin/googleLoginComp";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
-const baseUrl = import.meta.env.VITE_API_BASE_URL;
+// const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 const Login = (props) => {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const Login = (props) => {
     }
     await axios
       .post(
-        `${baseUrl}/api/auth/login`,
+        "http://localhost:5000/api/auth/login",
         loginField,
         { email: "", password: "" },
         { withCredentials: true }

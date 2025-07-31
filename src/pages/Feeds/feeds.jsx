@@ -11,7 +11,7 @@ import AddModal from "../../components/AddModal/addModal";
 import Image from "../../Image/ayush-image.jpg";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-const baseUrl = import.meta.env.VITE_API_BASE_URL;
+// const baseUrl = import.meta.env.VITE_API_BASE_URL;
 // import Loader from "../../components/Loader/loader";
 
 const Feeds = () => {
@@ -37,13 +37,13 @@ const Feeds = () => {
     try {
       const [selfData, postData, token] = await Promise.all([
         await axios.get(
-          `${baseUrl}/api/auth/self`,
+          "http://localhost:5000/api/auth/self",
           { token },
           {
             withCredentials: true,
           }
         ),
-        await axios.get(`${baseUrl}/api/post/getAllPost`),
+        await axios.get("http://localhost:5000/api/post/getAllPost"),
       ]);
       setPersonalData(selfData.data.user);
       localStorage.setItem("userInfo", JSON.stringify(selfData.data.user));
