@@ -17,7 +17,7 @@ import { ToastContainer, toast } from "react-toastify";
 const Feeds = () => {
   const [personalData, setPersonalData] = useState(null);
 
-  const [post, setPost] = useState([]);
+  const [setPost] = useState([]);
 
   const [addPostModal, setAddPostModal] = useState(false);
 
