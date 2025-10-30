@@ -1,4 +1,3 @@
-// import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import GoogleLoginComp from "../../components/GoogleLogin/googleLoginComp";
 import { useState } from "react";
@@ -10,99 +9,95 @@ const Login = (props) => {
   const navigate = useNavigate();
   const [loginField, setLoginField] = useState({ email: "", password: "" });
 
-  // --------------
   const onChangeInput = (event, key) => {
     setLoginField({ ...loginField, [key]: event.target.value });
   };
 
-  // =====================
   const handleLogin = async () => {
     if (
       loginField.email.trim().length === 0 ||
       loginField.password.trim().length === 0
     ) {
-      return toast.error("please fill all credentials");
+      toast.error("Please fill all credentials");
+      return;
     }
-    await axios
-      .post(
+    try {
+      const res = await axios.post(
         "http://localhost:5000/api/auth/login",
         loginField,
-        { email: "", password: "" },
         { withCredentials: true }
-      )
-      .then((res) => {
-        props.changeLoginValue(true);
-        localStorage.setItem("isLogin", "true");
-        localStorage.setItem("userInfo", JSON.stringify(res.data.user));
-        navigate("/feeds");
-      })
-      .catch((err) => {
-        console.log(err);
-        toast.error(
-          err?.response?.data?.error || "Login failed. Please try again."
-        );
-      });
+      );
+      props.changeLoginValue(true);
+      localStorage.setItem("isLogin", "true");
+      localStorage.setItem("userInfo", JSON.stringify(res.data.user));
+      navigate("/feeds");
+    } catch (err) {
+      console.error(err);
+      toast.error(
+        err?.response?.data?.error || "Login failed. Please try again."
+      );
+    }
   };
-
-  // ===============================================================================================================
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <div className="w-[85%] md:w-[28%] shadow-xl rounded-sm box p-10">
         <div className="text-3xl">Sign in</div>
 
-        {/* for google button  */}
-        <div className="my-3 flex mx-auto mt-[20px] bg-white gap-2 rounded-2xl  w-[100%] text-black cursor-pointer">
+        {/* Google button */}
+        <div className="my-3 flex mx-auto mt-[20px] bg-white gap-2 rounded-2xl w-[100%] text-black cursor-pointer">
           <GoogleLoginComp changeLoginValue={props.changeLoginValue} />
         </div>
 
-        {/* for line  */}
+        {/* Line separator */}
         <div className="flex items-center gap-2">
-          <div className="border-b-1 border-gray-400 w-[45%]" /> <div>or</div>{" "}
-          <div className="border-b-1 border-gray-400 w-[45%]" />
+          <div className="border-b border-gray-400 w-[45%]" />
+          <div>or</div>
+          <div className="border-b border-gray-400 w-[45%]" />
         </div>
 
-        {/* login form  */}
-        <div className=" flex flex-col gap-4">
+        {/* Login form */}
+        <div className="flex flex-col gap-4 mt-4">
           <div>
             <label htmlFor="email">Email</label>
             <input
+              id="email"
               value={loginField.email}
-              onChange={(e) => {
-                onChangeInput(e, "email");
-              }}
-              type="text"
+              onChange={(e) => onChangeInput(e, "email")}
+              type="email"
               className="w-full text-xl border-2 rounded-lg px-5 py-1"
               placeholder="Email"
+              autoComplete="username"
             />
           </div>
 
           <div>
             <label htmlFor="password">Password</label>
             <input
+              id="password"
               value={loginField.password}
-              onChange={(e) => {
-                onChangeInput(e, "password");
-              }}
+              onChange={(e) => onChangeInput(e, "password")}
               type="password"
               className="w-full text-xl border-2 rounded-lg px-5 py-1"
-              placeholder="password"
+              placeholder="Password"
+              autoComplete="current-password"
             />
           </div>
         </div>
 
-        {/* sign in button  */}
-        <div
+        {/* Sign in button */}
+        <button
+          type="button"
           onClick={handleLogin}
-          className="w-full bg-blue-800 text-white py-3 px-4 rounded-xl cursor-pointer my-5 text-center "
+          className="w-full bg-blue-800 text-white py-3 px-4 rounded-xl cursor-pointer my-5 text-center"
         >
           Login
-        </div>
+        </button>
       </div>
 
       <div className="mt-4 mb-10">
         New to Linkdin?{" "}
-        <Link to={"/signUp"} className="text-blue-800">
+        <Link to="/signUp" className="text-blue-800">
           Join Now
         </Link>
       </div>
